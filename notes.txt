@@ -1,0 +1,240 @@
+
+Data structures and base consepts:
+https://www.youtube.com/watch?v=RBSGKlAvoiM&list=PLWKjhJtqVAbn5emQ3RRG8gEBqkhf_5vxD
+
+Dynamic Programming:
+https://www.youtube.com/watch?v=oBt53YbR9Kk&ab_channel=freeCodeCamp.org
+
+Interview:
+- make a notes, what the task is
+- define an example, draw, sequence number etc
+- brute force! initial algorithm, not optimal, but next step is
+- optimize it
+- add todo to catch errors, we are limited in time
+- good variable names
+- postpone refactoring but mention it
+- test you code, line by line read it and explain
+- check boundaries, zerros, nulls
+- check for BUD: bottleneck, unnecessary work, duplicated work
+- optimize the slowest part O(n) not O(log n) 
+
+even - devided by 2 w/o a remainder: 2,4,6...
+odd - cannot be devided by 2 w/o a reminder: 1,3,5...
+
+Big O:
+O(1) - constant
+O(log N) - logarithmic
+O(n) - linear
+O(n^2) - quadratic
+O(2^n) - exponential
+O(n^n) - ??
+O(n!) - factoraial
+
+// O(log n)
+while (n > 0) {
+	n /= 2;
+}
+
+Data Structures:
+- Linked Lists
+- Trees, Tries, & Graphs
+- Stacks & Queues
+- Heaps
+- Vectors/ArrayLists
+- Hash Tables
+
+Heap:
+A Heap is a special Tree-based data structure in which the tree is a complete binary tree.
+- Max-Heap: In a Max-Heap the key present at the root node must be greatest among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
+- Min-Heap: In a Min-Heap the key present at the root node must be minimum among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
+
+- always goes left to right
+- if it's bigger/smaller than parrent just swap and goes up
+
+A more common approach is to store the heap in an array. Since heap is always a complete binary tree, it can be stored compactly. No space is required for pointers; instead, the parent and children of each node can be found by simple arithmetic on array indices.
+
+For each index i, element arr[i] has children at arr[2i + 1] and arr[2i + 2], and the parent at arr[floor( ( i - 1 )/2 )].
+
+Binary Heaps (Min-Heaps and Max Heaps)
+- complete binary tree
+- each node smaller/bigger than it's children
+- root is the minimum/maximum
+- insert, start at the bottom, from right to left then bubble
+- insert takes O(log N) where N number of nodes
+
+Hash Tables:
+- A binary search tree is balanced if and only if the depth of the two subtrees of every node never differ by more than 1.
+- average operation O(log N) worst O(log N)
+- TODO: rotation binary search tree? what is binary search tree?
+
+Strings:
+- palindrome is a word or phrase that is the same forwards and backwords
+- permutation?
+- string compression? replace repeated chars with char+number, check it's not longer?
+- rotate matrix to 90 degree?
+- substring of rotated string?
+
+Linkned list:
+- benefit that insert and remove is constant time
+- single or double
+- multi-threading or muliple access modifying list, head may be changed
+- remove middle node?
+- remove dups? w/o temp buffer
+- sub lists? reverse order or forward
+- is it a palindrome?
+
+Stack:
+- LIFO (last-in first-out)
+- constant time adds and removes
+- can be implemented as a linked list
+- can be used to implement recursive algorithm
+- add function min? should be O(1)
+- sort stack?
+
+Queue:
+- FIFO (first-in first-out)
+- can be implemented as a linked list
+- can be used in breadth-first search or cache
+
+Trees:
+- each tree has a root node
+- the root node has zero or more child nodes
+- each childnode has zero or more child nodes, and so on
+- tree cannot contain cycles
+- may or may not have links back to their parent nodes
+
+Binary Trees:
+- tree in which each node has up to two children
+- leaf node has no children
+
+Binary Search Tree:
+- binary tree in which every node: all left descendents <= n < all right descendents
+- can or cannot have duplicate values, always clarify
+
+Balanced vs. Unbalanced
+- balanced enough to ensure O(log N) times for insert and find
+
+Complete Binary Trees:
+- every level of the tree is fully filled
+- except the last level, filled left to right
+
+Full binary Trees:
+- tree in which every node has either zero or two children
+- no nodes with one children
+
+Perfect Binary Trees:
+- both full and complete
+- all leaf nodes will be at the same level
+- each level has the maximum number of nodes
+
+Binary Tree Traversal:
+- In-Order: visit/print left branch, current node, right branch
+- Pre-Order: visit/print current node, left branch, right branch
+- Post-Order: visit/print left branch, right branch, current node
+
+Tries (Prefix Trees):
+- characters are sotred at each node
+- each path down the tree may represent a word
+- the * (null) nodes indicate complete words
+
+Graph:
+- collection of nodes (vertexes) with edges
+- can be directed or undirected
+- can contain multiple isolated subgraphs, cannot reach all nodes from the single node
+- can be cycles or not
+
+Adjacency List:
+- common way to represent a graph
+- every vertex (node) stores a list of adjecent vertices
+- undirected graph sotres edges twice: for A and for B
+
+Adjacency Matrices:
+- matrix NxN boolean
+- true value idicates an edge form i to j (matrix[i][j])
+
+Graph Search:
+- depth-first search (DFS): explore branch completely, deep first
+- breadth-first search (BFS): explore each neighbor before goint to children, wide first
+- find the shortest path between two nodes BFS is better
+- example: find friend of friend-of-a-friend
+- pre-order and other traversal are DFS
+- for cycle graphs we need to track visited nodes
+- BFS search is using queue!
+- route between nodes?
+- build order, given a list of projects and a list of dependencies, find a build order?
+
+Dynamic Programming:
+DP is an algorithmic technique for solving an optimization problem by breaking it down into simpler subproblems and utilizing the fact that the optimal solution to the overall problem depends upon the optimal solution to its subproblems.
+
+- Top-Down with Memorization
+- Bottom-Up with Tabulation (Tabulation avoids recursion)
+
+Sorting:
+- bubble sort: r O(n^2), m o(1)
+- selection sort: r O(n^2), m O(1)
+- merge sort: r O(n log n), m depends
+- quick sort: r O(n log n) worst case O(n^2, m O(log n)
+- radix sort: r O(kn), NOTE: mostly for integers
+
+Algorighs:
+- Breadth-First Search (BFS)
+- Depth-First Search (DFS)
+- Binary Search
+- Merge Sort
+- Quick Sort
+
+Traverse Tree:
+- pre-order
+- in-order: in case of BST prints in increasing order
+- post-order
+- level-order (BFS), used queue, iterate, not recurse
+
+Concepts:
+- Bit manipulation
+- Memory (Stack vs. Heap)
+- Recursion
+- Dynamic Programming
+- Big O Time & Spaces
+
+TreeMap vs HashMap vs LinkedHashMap
+- HashMap O(1) lookup and insertion, implemented by an array of linked lists, output is any ordering
+- TreeMap O(log N) lookup and insertion, implemented by Red-Black Tree (Self-Balancing Binary Search Tree), output is true/natural order, next 10 ppl in hash by name
+- LinkedHashMap O(1) lookup and insertion, implemented by double-linked buckets, output is matching insertion (cache, remove oldest)
+
+Process vs Threads:
+- process is executed in separated address space
+- process cannot access the variables and data structures of another process
+- process equal to JVM, owns independent resources like CPU and memory
+- thread exists within a process
+- thread shares the process' resources including heap space
+- muliple threads witin the same process will share the same heap space
+- each thead still has its own registers and its own stack
+- thread moidifies a process resources, the change is visible to sibling threads
+
+KISS/SOLID/DRY
+- KISS stands for keep it simple, stupid
+- DRY stands for dodn't repeat yourself
+- SOLID principles intended to make software designs more understandable, flexible, and maintainable
+	* Single Responsibility Principle
+	* Open-Closed Principle
+	* Liskov Substitution Principle
+	* Interface Segregation Principle
+	* Dependency Inversion Principle
+
+TDD software development process
+The following sequence of steps is generally followed:
+- Add a test
+- Run all tests and see if the new one fails
+- Write some code
+- Run tests
+- Refactor code
+- Repeat
+
+Linear Proagramming:
+- goal/objective
+- variables
+- constrains
+
+
+Dijkstra's Shortest Path algorithm?
+Minimum Spanning Tree?

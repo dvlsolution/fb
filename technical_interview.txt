@@ -1,0 +1,96 @@
+// Given a binary tree, return the vertical order traversal of its nodes values.
+  
+              100
+              / \
+             2   3
+            / \ / \
+           4  5 6  7
+// vertical level
+  100: 0
+  2: -1
+  3: 1
+  4: -2
+  5: 0
+  6: 0
+  7: 2
+
+    
+// Output: [[4], [2], [5,6,100], [3], [7]]
+    
+    
+class TreeNode {
+  int val;
+  TreeNode left;
+  TreeNode right
+}
+
+void buildVerticalOrder(TreeNode node, Map<Integer, List<Integer>> verticalMap, int level) {
+  if (node == null) return;
+  
+  if (verticalMap.contains(level)) {
+    vm.get(level).add(node.val);
+  } else {
+    vm.put(level, Collections.singletonList(node.val));
+  }
+  
+  
+  buildVerticalOrder(node.left, vm, level - 1);
+  buildVerticalOrder(node.right, vm, level + 1);
+}
+
+
+List<List<Integer>> printVerticalOrder(TreeNode root) {
+  if (root == null) return null;
+  
+  Map<Integer, List<Integers>> verticalMap = new HashMap<>();
+  buildVerticalOrder(root, verticalMap, 0);
+  
+  List<List<Integer>> result = new ArrayList<>();
+  for (int i = getMin(vm); i <= getMax(vm); i++) {
+    result.add(vm.get(i));
+  }
+  
+  return result;
+}
+
+
+// Add two integer arrays
+// Input: [3, 4, 5] and [9, 4] (represent 345 and 94)
+// Output: [4, 3, 9] (represents 439)
+
+// Input: [3, 4, 5] and [0, 9, 4];  arr1[i] + arr2[i] % 10 -> result[i], if sum > 10 memorize 1 
+
+
+//   3 4 5
+// +
+//   0 9 4
+// =
+//         
+
+
+int[] arraySum(int[] arr1, int[] arr2) {
+  if (arr1 == null || arr1.length < 0) return arr2;
+  if (arr2 == null || the same) return arr1;
+  
+  int[] bigArray;
+  int[] smallArray;
+  if (arr1.length > arr2.length) bigArray = arr1; smallArray = arr2 else bigArray = arr2; smallArray = arr1;
+  
+  int i = arr1.length;
+  int j = arr2.length;
+  int ten = 0;
+  
+  int[] output = new int[bigArray.length + 1];
+  while(i >= 0 || j >= 0) {
+    int sum = arr1[i] + arr2[j] + ten;
+    output[k] = sum % 10;
+    
+    if (sum > 10) ten = 1 else 0;
+    
+    i--;
+    j--;
+  }
+  
+  return output;
+}
+
